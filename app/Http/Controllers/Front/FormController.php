@@ -92,7 +92,7 @@ class FormController extends Controller
             })->encode();
             Storage::put($path02, $image_resize);
 
-        }
+		}
 //row 2
         if (!empty($request->picture[2])) {
             $datas_saved = unserialize($result->project_content);
@@ -229,9 +229,9 @@ class FormController extends Controller
             Storage::put($path09, $image_resize);
         }
 
-        $all_request = $request->project_content;
-        $upload_file01 = ['29' => $path01];
-        $upload_file02 = ['30' => $path02];
+		$all_request = $request->project_content;
+		$upload_file01 = ['29' => $path01];
+		$upload_file02 = ['30' => $path02];
 		$upload_file03 = ['31' => $path03];
 		$upload_file04 = ['32' => $path04];
 		$upload_file05 = ['33' => $path05];

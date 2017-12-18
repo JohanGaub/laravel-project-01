@@ -57,8 +57,7 @@ class FormController extends Controller
             // Define $picture1 with $request->picture[0] which is 'upload/filename.jpg'
             $picture1 = $request->picture[0];
             // Get the storage path of the file+name
-            $filename = storage_path() . "/" . $picture1;
-//            Storage::delete($filename);
+            $filename = storage_path("/app/public/" . $picture1);
             File::delete($filename);
 
 
@@ -80,7 +79,7 @@ class FormController extends Controller
             $datas_saved[30] = null;
             $path02 = $datas_saved[30];
             $picture2 = $request->picture[1];
-            $filename = storage_path() . $picture2;
+            $filename = storage_path("/app/public/" . $picture2);
             File::delete($filename);
         }elseif (empty($request->file('project_content.30')))
         {
@@ -100,7 +99,7 @@ class FormController extends Controller
             $datas_saved[31] = null;
             $path03 = $datas_saved[31];
             $picture3 = $request->picture[2];
-            $filename = storage_path() . $picture3;
+            $filename = storage_path("/app/public/" . $picture3);
             File::delete($filename);
         }elseif (empty($request->file('project_content.31')))
         {
@@ -119,7 +118,7 @@ class FormController extends Controller
             $datas_saved[32] = null;
             $path04 = $datas_saved[32];
             $picture4 = $request->picture[3];
-            $filename = storage_path() . $picture4;
+            $filename = storage_path("/app/public/" . $picture4);
             File::delete($filename);
         }elseif (empty($request->file('project_content.32')))
         {
@@ -138,7 +137,7 @@ class FormController extends Controller
             $datas_saved[33] = null;
             $path05 = $datas_saved[33];
             $picture5 = $request->picture[4];
-            $filename = storage_path() . $picture5;
+            $filename = storage_path("/app/public/" . $picture5);
             File::delete($filename);
         }elseif (empty($request->file('project_content.33')))
         {
@@ -157,7 +156,7 @@ class FormController extends Controller
             $datas_saved[34] = null;
             $path06 = $datas_saved[34];
             $picture6 = $request->picture[5];
-            $filename = storage_path() . $picture6;
+            $filename = storage_path("/app/public/" . $picture6);
             File::delete($filename);
         }elseif (empty($request->file('project_content.34')))
         {
@@ -177,7 +176,7 @@ class FormController extends Controller
             $datas_saved[35] = null;
             $path07 = $datas_saved[35];
             $picture7 = $request->picture[6];
-            $filename = storage_path() . $picture7;
+            $filename = storage_path("/app/public/" . $picture7);
             File::delete($filename);
         }elseif (empty($request->file('project_content.35')))
         {
@@ -196,7 +195,7 @@ class FormController extends Controller
             $datas_saved[36] = null;
             $path08 = $datas_saved[36];
             $picture8 = $request->picture[7];
-            $filename = storage_path() . $picture8;
+            $filename = storage_path("/app/public/" . $picture8);
             File::delete($filename);
         }elseif (empty($request->file('project_content.36')))
         {
@@ -216,7 +215,7 @@ class FormController extends Controller
             $datas_saved[37] = null;
             $path09 = $datas_saved[37];
             $picture9 = $request->picture[8];
-            $filename = storage_path() . $picture9;
+            $filename = storage_path("/app/public/" . $picture9);
             File::delete($filename);
         }elseif (empty($request->file('project_content.37')))
         {

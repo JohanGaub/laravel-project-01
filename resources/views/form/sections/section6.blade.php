@@ -9,7 +9,7 @@
                 <div class="fdw-background">
                     <h6 class="modify-picture">@lang('form.modify_image')</h6>
                     <div class="row mx-1">
-                        <input style="display: none; visibility: hidden;" type="file" class="form-control input-style"  id="file1" name="project_content[29]" value="{{ $result->content[29] }}">
+                        <input style="display: none; visibility: hidden;" accept=".jpg, .jpeg, .png, .pdf" type="file" class="form-control input-style"  id="file1" name="project_content[29]" value="{{ $result->content[29] }}">
                         <button type="button" onclick="$('#file1').trigger('click');" class="load-file">@lang('form.upload-file')</button>
                     </div>
                     <div class="delete-file row mx-4">
@@ -26,6 +26,7 @@
                 </button>
             </div>
         </div>
+
         <!-- Modal -->
         <div class="modal fade col-md-12" id="myModal0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

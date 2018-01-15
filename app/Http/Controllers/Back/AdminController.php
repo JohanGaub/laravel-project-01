@@ -22,7 +22,10 @@ class AdminController extends Controller
 
 	public function generatePDF(Result $result)
 	{
-		$data['projects']  = $this->project->getResultInfos($result->id);
+		for($i = 0 ; $i < 5 ; $i++)
+
+
+	    $data['projects']  = $this->project->getResultInfos($result->id);
 
  		$pdf = App::make('dompdf.wrapper');
 		$pdf->loadView('pdf.invoice', $data);

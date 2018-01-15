@@ -72,7 +72,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-12">
-                <label for="" class="col-form-label">@lang('sections')</label>
+                <label for="" class="col-form-label">@lang('form.global.advice')</label>
                 <textarea id="sections"  placeholder="" class="form-control textarea-200" name="project_content[21]" maxlength="200" autofocus>{{ $result->content[21] }}</textarea>
                 <p class="line-under-textarea mt-1" id="compteur21">0 / 200 @lang('form.char_max')</p>
             </div>

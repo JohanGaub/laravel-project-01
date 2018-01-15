@@ -46,28 +46,32 @@ class FormController extends Controller
 
         $result = Result::find($result_id);
 //row1
-        // On submit, when I check the box (=it's not empty) with name = picture[0], I select the value associated "$result->content[27]" = 'upload/filename.jpg',
+        // On submit, when I check the box (=it's not empty) with name = picture[0], I select the value associated "$result->content[XX]" = 'upload/filename.jpg',
         if (!empty($request->picture[0])) {
             // Unserialize all datas saved from the DB ==> $result->project_content
             $datas_saved = unserialize($result->project_content);
-            // Put NULL on the 27th position in the DB
+            // Put NULL on the XXth position in the DB
             $datas_saved[29] = null;
-            // Take ONLY the 27th array which is the path+filename = 'upload/filename.jpg'
+            // Take ONLY the XXth array which is the path+filename = 'upload/filename.jpg'
             $path01 = $datas_saved[29];
             // Define $picture1 with $request->picture[0] which is 'upload/filename.jpg'
             $picture1 = $request->picture[0];
             // Get the storage path of the file+name
             $filename = storage_path("/app/public/" . $picture1);
+            // Delete the file storaged
             File::delete($filename);
 
-
+        // else if checkbox is empty
         } elseif (empty($request->file('project_content.29'))) {
-            // Unserialize all datas saved from the DB ==> $result->project_content
+            //Unserialize
             $datas_saved = unserialize($result->project_content);
-            // Take ONLY the 27th array which is the path+filename = 'upload/filename.jpg'
+            // Take the path which was already saved in XXth line as $path01
             $path01 = $datas_saved[29];
+        // else
         } else {
+            // Store the image in $path01 when requested
             $path01 = $request->file('project_content.29')->store('upload');
+            // Resize image stored in $path01
             $image_resize = Image::make(Storage::get($path01))->resize(1400, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->encode();
